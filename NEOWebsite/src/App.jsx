@@ -15,18 +15,21 @@ function App() {
 
   useEffect(() => {
     async function fetchAPIData() {
-      const url = 'https://api.nasa.gov/planetary/apod' + 
-      `?api_key=${NASA_KEY}`
+      const today = new Date().toISOString().slice(0,10)
+      const url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${today}&end_date=${today}` + `&api_key=${NASA_KEY}`
 
-      const today = (new Date()).toDateString()
+      
       const localKey = `NASA-${today}`
+      /*
       if (localStorage.getItem(localKey)) {
         const apiData = JSON.parse(localStorage.getItem(localKey))
         setData(apiData)
+        console.log(data)
         console.log('Fetched from cache today')
         return
       }
       localStorage.clear()
+      */
 
       try {
         const res = await fetch(url)
@@ -39,6 +42,7 @@ function App() {
         console.log(err.message)
       }
     }
+
     fetchAPIData()
   }, [])
   return (

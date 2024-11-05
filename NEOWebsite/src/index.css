@@ -26,7 +26,7 @@
   display: relative;
 
 }
-.imgContainer {
+.tblContainer {
   display: flex;
   flex-direction: column;
 }
