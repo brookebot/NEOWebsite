@@ -26,9 +26,13 @@
   display: relative;
 
 }
-.tblContainer {
+
+.animation-container {
+  height: 100vh;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .bgImage {
@@ -36,6 +40,46 @@
   width: 100%;
   flex: 1;
   object-fit: cover;
+}
+
+.asteroid-container {
+  position: absolute;
+  height: 850px;
+  width: 850px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+
+}
+
+.asteroid-container > img {
+  height: 50px;
+  width: 50px;
+  animation: asteroid-animation 10000ms linear infinite;
+}
+
+.asteroid-container > p {
+  height: 5px;
+  width: 5px;
+  animation: id-animation 10000ms linear infinite;
+}
+.earth-container {
+  position:  static;
+  height: 400px;
+  width: 400px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+
+.earth-container > img {
+  height: 100px;
+  width: 100px;
 }
 
 footer {
@@ -175,6 +219,24 @@ footer button:hover {
 
 .sidebarContent button:hover {
   opacity: 0.7;
+}
+
+@keyframes asteroid-animation {
+  0% {
+      transform: rotate(0deg) translate(425px) rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg) translate(425px) rotate(360deg);
+  }
+}
+
+@keyframes id-animation {
+  0% {
+      transform: rotate(0deg) translate(425px) ;
+  }
+  100% {
+      transform: rotate(360deg) translate(425px);
+  }
 }
 
 @media (min-width: 640px){
