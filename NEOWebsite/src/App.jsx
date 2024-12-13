@@ -8,10 +8,18 @@ function App() {
   const [loading, setLoading] = useState(false)
   const NASA_KEY = import.meta.env.VITE_NASA_API_KEY
   const [showModal, setShowModal] = useState(false)
+  
 
   function handleToggleModal() {
     setShowModal(!showModal)
   }
+
+  
+  
+
+
+
+
 
   useEffect(() => {
     async function fetchAPIData() {
@@ -47,7 +55,7 @@ function App() {
   }, [])
   return (
     <>
-      {data ? (<Main data={data}/>): (
+      {data ? (<Main data={data} useState={useState}/>): (
         <div className="loadingState">
           <i className="fa-solid fa-gears"></i>
         </div>

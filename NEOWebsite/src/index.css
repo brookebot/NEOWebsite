@@ -35,40 +35,100 @@
   align-items: center;
 }
 
-.bgImage {
-  height: 100%;
-  width: 100%;
+.bgImage { 
+  width: 100dvh;
   flex: 1;
+  z-index: -1;
+  display: flex;
   object-fit: cover;
 }
 
 .asteroid-container {
   position: absolute;
-  height: 850px;
-  width: 850px;
+  margin-top: 30%;
   border-radius: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid white;
+  border: 1px dashed rgb(167, 153, 192);
 
 }
 
-.asteroid-container > img {
-  height: 50px;
-  width: 50px;
-  animation: asteroid-animation 10000ms linear infinite;
+.ast_img_cont {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.asteroid-container > p {
+.ast_img_cont > img {
+  position: absolute;
+  margin-left: auto;
+  height: 40px;
+  width: 40px;
+  z-index: 0;
+
+}
+
+.ast_img_cont > p {
+  position: absolute;
+  margin-left: auto;
   height: 5px;
   width: 5px;
-  animation: id-animation 10000ms linear infinite;
 }
+
+.info_button_container {
+  z-index: 2;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+
+.clicky {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  margin-top: -30px;
+  margin-left: -30px;
+  background: transparent;
+  outline: none;
+  border: none;
+  color: white;
+  padding: 1rem;
+  transition-duration: 200ms;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.clicky i {
+  font-size: 40px;
+  opacity: 0;
+  transition-duration: 200ms;
+}
+
+.clicky i:hover {
+  opacity: 0.5;
+}
+
+.info_box {
+  background-color: #1c1c1d;
+  padding-bottom: 10%;
+  padding-left: 10%;
+  opacity: 0;
+}
+
+.info_box:hover {
+  background-color: #1c1c1d;
+  padding-bottom: 10%;
+  padding-left: 10%;
+  opacity: 1;
+}
+
 .earth-container {
-  position:  static;
-  height: 400px;
-  width: 400px;
+  position:  absolute;
+  height: 500px;
+  width: 500px;
   border-radius: 100%;
   display: flex;
   justify-content: center;
@@ -99,11 +159,11 @@ footer div {
 }
 
 footer h2 {
-  font-size: 1.4rem;
+  font-size: 0.9rem;
 }
 
 footer h1 {
-  font-size: 0.9rem;
+  font-size: 2rem;
   font-weight: 200;
 }
 
@@ -118,7 +178,7 @@ footer button {
 }
 
 footer button i {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 footer button:hover {
@@ -165,7 +225,7 @@ footer button:hover {
 
 .sidebarContent h2 {
   font-weight: 200;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 .descContainer {
@@ -178,6 +238,19 @@ footer button:hover {
   font-size: 0.9rem;
   font-weight: 200;
 
+}
+
+th {
+  text-align: left;
+}
+tr {
+  text-align: left;
+  height: 15px;
+  font-size: 0.9rem;
+}
+
+td {
+  padding-left: 20px;
 }
 
 .loadingState {
@@ -220,13 +293,13 @@ footer button:hover {
 .sidebarContent button:hover {
   opacity: 0.7;
 }
-
+/*
 @keyframes asteroid-animation {
   0% {
       transform: rotate(0deg) translate(425px) rotate(0deg);
   }
   100% {
-      transform: rotate(360deg) translate(425px) rotate(360deg);
+      transform: rotate(360deg) translate(425px) rotate(0deg);
   }
 }
 
@@ -238,7 +311,7 @@ footer button:hover {
       transform: rotate(360deg) translate(425px);
   }
 }
-
+*/
 @media (min-width: 640px){
   .sidebar {
     position: relative;
@@ -251,3 +324,4 @@ footer button:hover {
     margin: unset;
   }
 }
+
